@@ -34,6 +34,7 @@ pipeline {
 			steps{
 				//sh "npm install snyk@latest -g"
 				//sh "snyk test"
+				sh "export PATH=$PATH:${WORKSPACE}"
 				sh "curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b ${WORKSPACE}"
 				sh "curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b ${WORKSPACE}"
 				sh "syft packages dir:. --file ./sbom.json -o syft-json -s AllLayers -vv"
