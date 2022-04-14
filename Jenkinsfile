@@ -32,7 +32,7 @@ pipeline {
         }
 		stage ('SBOM') {
 			steps{
-				sh "npm install snyk@latest -g"
+				//sh "npm install snyk@latest -g"
 				sh "snyk test"
 				sh "syft packages dir:. --file ./sbom.json -o syft-json -s AllLayers -vv"
 				sh "grype sbom:./sbom.json --file ./vuln.json --fail-on high -o json -s AllLayers -vv"
