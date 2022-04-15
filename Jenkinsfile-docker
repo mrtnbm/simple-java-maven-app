@@ -41,7 +41,7 @@ pipeline {
                 snykSecurity(
                     snykInstallation: 'snyk',
                     snykTokenId: 'snyk_api',
-                    additionalArguments: 'snyk test --all-projects --print-deps --show-vulnerable-paths=all --json',
+                    additionalArguments: 'snyk test --all-projects --print-deps --show-vulnerable-paths=all',
                     // place other parameters here
                 )
              }
