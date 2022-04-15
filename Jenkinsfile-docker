@@ -21,6 +21,12 @@ pipeline {
                 }
             }
         }
+        stage ('Generate SBOM') {
+            steps{
+                sh "./jenkins/scripts/install.sh"
+                sh "./jenkins/scripts/exec.sh"
+            }
+        }
         stage('Deliver') {
             steps {
                 sh './jenkins/scripts/deliver.sh'
