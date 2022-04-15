@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'maven:3.8.1-adoptopenjdk-11' 
-            args '-v /root/.m2:/root/.m2' 
+            args '-v /root/.m2:/root/.m2 -u root:sudo'
         }
     }
     environment {
@@ -13,7 +13,7 @@ pipeline {
         stage('Preparation') {
             steps {
                 sh "chmod +x -R ${WORKSPACE}"
-                sh "chmod +x -R ."
+                //sh "chmod +x -R ."
                 //sh "export PATH=$PATH:${WORKSPACE}/"
                 //echo "PATH="
                 //sh "${WORKSPACE}"
