@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Permissions') {
             steps {
-                sh "sudo chmod +x -R ${WORKSPACE}"
+                sh "chmod +x -R ${WORKSPACE}"
             }
         }
         stage('Build') { 
