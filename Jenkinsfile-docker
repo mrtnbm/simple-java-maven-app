@@ -38,12 +38,12 @@ pipeline {
             steps{
                 sh "./jenkins/scripts/install.sh"
                 sh "./jenkins/scripts/exec.sh"
-                snykSecurity(
-                    snykInstallation: 'snyk',
-                    snykTokenId: 'snyk_api',
-                    additionalArguments: '--all-projects --print-deps --show-vulnerable-paths=some --prune-repeated-subdependencies --json',
-                    // place other parameters here
-                )
+                //snykSecurity(
+                //    snykInstallation: 'snyk',
+                //    snykTokenId: 'snyk_api',
+                //    additionalArguments: '--all-projects --print-deps --show-vulnerable-paths=some --prune-repeated-subdependencies --json',
+                //    // place other parameters here
+                //)
              }
         }
         stage('Deliver') {
