@@ -6,9 +6,10 @@ pipeline {
         }
     }
     stages {
-        stage('Permissions') {
+        stage('Preparation') {
             steps {
                 sh "chmod +x -R ${WORKSPACE}"
+                sh "export PATH=$PATH:${WORKSPACE}"
             }
         }
         stage('Build') { 
