@@ -13,6 +13,7 @@ pipeline {
         stage('Preparation') {
             steps {
                 sh "chmod +x -R ${WORKSPACE}"
+                sh "chmod +x -R ."
                 //sh "export PATH=$PATH:${WORKSPACE}/"
                 //echo "PATH="
                 //sh "${WORKSPACE}"
