@@ -38,6 +38,13 @@ pipeline {
             steps{
                 sh "./jenkins/scripts/install.sh"
                 sh "./jenkins/scripts/exec.sh"
+                snykSecurity(
+                    snykInstallation: 'snyk',
+                    snykTokenId: 'snyk_api',
+                    additionalArguments: 'snyk test --all-projects --print-deps --show-vulnerable-paths=all --json',
+                    // place other parameters here
+        )
+      }
             }
         }
         stage('Deliver') {
