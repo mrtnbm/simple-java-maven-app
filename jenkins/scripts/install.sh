@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-curl -sL https://deb.nodesource.com/setup_16.x | -E bash -
+curl -sL https://deb.nodesource.com/setup_16.x | bash -
 apt-get install -y nodejs
 apt install build-essential
 npm install snyk@latest -g
