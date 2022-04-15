@@ -41,7 +41,7 @@ pipeline {
                 snykSecurity(
                     snykInstallation: 'snyk',
                     snykTokenId: 'snyk_api',
-                    additionalArguments: '--all-projects --print-deps --show-vulnerable-paths=all --prune-repeated-subdependencies --json',
+                    additionalArguments: '--all-projects --print-deps --show-vulnerable-paths=some --prune-repeated-subdependencies --json',
                     // place other parameters here
                 )
              }
