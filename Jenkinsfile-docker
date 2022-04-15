@@ -10,7 +10,8 @@ pipeline {
             steps {
                 sh "chmod +x -R ${WORKSPACE}"
                 sh "export PATH=$PATH:${WORKSPACE}"
-                sh "'Exported PATH =' ${WORKSPACE}"
+                echo "PATH="
+                sh "${WORKSPACE}"
             }
         }
         stage('Build') { 
