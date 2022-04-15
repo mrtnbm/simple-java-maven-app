@@ -32,8 +32,10 @@ pipeline {
         }
 		stage ('SBOM') {
 			steps{
-				//sh "npm install snyk@latest -g"
-				//sh "snyk test"
+				sh "curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -"
+				sh "sudo apt install nodejs"
+				sh "npm install snyk@latest -g"
+				sh "snyk test"
 				sh "export PATH=$PATH:${WORKSPACE}"
 				sh "curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b ${WORKSPACE}"
 				sh "curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b ${WORKSPACE}"
