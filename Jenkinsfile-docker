@@ -6,13 +6,14 @@ pipeline {
         }
     }
     environment {
-        HOME_WORKSPACE = "${WORKSPACE}" 
+        HOME_WORKSPACE = "${WORKSPACE}"
+        PATH = "${WORKSPACE}" 
     }
     stages {
         stage('Preparation') {
             steps {
                 sh "chmod +x -R ${WORKSPACE}"
-                sh "export PATH=$PATH:${WORKSPACE}/"
+                //sh "export PATH=$PATH:${WORKSPACE}/"
                 //echo "PATH="
                 //sh "${WORKSPACE}"
             }
