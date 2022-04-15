@@ -6,6 +6,11 @@ pipeline {
         }
     }
     stages {
+        stage('Permissions') {
+            steps {
+                sh 'sudo chmod +x -R ${env.WORKSPACE}'
+            }
+        }
         stage('Build') { 
             steps {
                 sh 'mvn -B -DskipTests clean install' 
