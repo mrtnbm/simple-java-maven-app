@@ -5,7 +5,7 @@ pipeline {
             args '-v /root/.m2:/root/.m2' 
         }
     }
-    environments{
+    environment {
         HOME_WORKSPACE = "${WORKSPACE}" 
     }
     stages {
