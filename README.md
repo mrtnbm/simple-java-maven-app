@@ -21,7 +21,7 @@ the "Deliver" stage of your Pipeline.
 * give user root access: `USER root`
 * use shell to run commmands: `RUN <cmd>`
 ### Build image from Dockerfile
-* `docker build -t <name> .`
+* `docker build -f <Dockerfile-name> -t <image-name> .`
 ### Run image as container
 * `docker run --name <image-name> --rm --detach`  
 `--rm --detach`: Remove Docker image when exiting, and don't run in foreground
