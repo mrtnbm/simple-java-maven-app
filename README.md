@@ -21,8 +21,15 @@ the "Deliver" stage of your Pipeline.
 * give user root access: `USER root`
 * use shell to run commmands: `RUN <cmd>`
 ### Build image from Dockerfile
-* `docker build -f <Dockerfile-name> -t <image-name> .`
+* `docker build -f <Dockerfile-name> -t <image-name> .`  
+In my case: `docker build -f Dockerfile -t linux-maven-openjdk-sbom-tools .`
 ### Run image as container
 * `docker run --name <image-name> --rm --detach`  
-`--rm --detach`: Remove Docker image when exiting, and don't run in foreground
-
+`--rm --detach`: Remove Docker image when exiting, and don't run in foreground  
+* You can also do it in Jenkins:
+```groovy
+docker {
+    image 'amd64/maven:3.8.1-adoptopenjdk-11' 
+    args '--privileged -v /root/.m2:/root/.m2 -u root'
+}
+```
