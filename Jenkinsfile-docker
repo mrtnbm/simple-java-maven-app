@@ -1,9 +1,16 @@
 pipeline {
     agent {
-        docker {
-            image 'linux-maven-openjdk-sbom-tools' 
-            args '--privileged -v /root/.m2:/root/.m2 -u root' //-v /cache -v /var/run/docker.sock:/var/run/docker.sock
-        }
+        dockerfile {
+        filename 'Dockerfile'
+        //dir 'build'
+        //label 'my-defined-label'
+        additionalBuildArgs  '-t linux-maven-openjdk-sbom-tools'
+        //args '--privileged -v /root/.m2:/root/.m2 -u root'
+    }
+        //docker {
+        //    image 'linux-maven-openjdk-sbom-tools' 
+        //    args '--privileged -v /root/.m2:/root/.m2 -u root' //-v /cache -v /var/run/docker.sock:/var/run/docker.sock
+        //}
     }
     environment {
         HOME_WORKSPACE = "${WORKSPACE}"
