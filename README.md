@@ -33,3 +33,12 @@ docker {
     args '--privileged -v /root/.m2:/root/.m2 -u root'
 }
 ```
+### Push image to repo
+* tag image: `docker tag firstimage YOUR_DOCKERHUB_NAME/firstimage`
+```
+docker tag linux-maven-openjdk-sbom-tools mrtnbm/linux-maven-openjdk-sbom-tools
+```
+* push image `docker push YOUR_DOCKERHUB_NAME/firstimage`
+```
+docker push mrtnbm/linux-maven-openjdk-sbom-tools
+```

@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'amd64/maven:3.8.1-adoptopenjdk-11' 
+            image 'mrtnbm/linux-maven-openjdk-sbom-tools' 
             args '--privileged -v /root/.m2:/root/.m2 -u root'
         }
     }
@@ -36,7 +36,7 @@ pipeline {
         }
         stage ('Generate SBOM') {
             steps{
-                sh "./jenkins/scripts/install.sh"
+                //sh "./jenkins/scripts/install.sh"
                 sh "./jenkins/scripts/exec.sh"
                 //snykSecurity(
                 //    snykInstallation: 'snyk',
