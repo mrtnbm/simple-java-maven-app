@@ -7,3 +7,4 @@ RUN npm install snyk@latest -g
 RUN curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b /usr/local/bin
 RUN curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
 RUN export PATH=$PATH:usr/local/bin
+EXPOSE 7000/tcp
