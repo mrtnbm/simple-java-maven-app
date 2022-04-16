@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'mrtnbm/linux-maven-openjdk-sbom-tools:latest' 
-            args '--privileged -v /root/.m2:/root/.m2 -u root --volumes /cache, /var/run/docker.sock:/var/run/docker.sock'
+            args '--privileged -v /root/.m2:/root/.m2 -v /cache -v /var/run/docker.sock:/var/run/docker.sock -u root'
         }
     }
     environment {
